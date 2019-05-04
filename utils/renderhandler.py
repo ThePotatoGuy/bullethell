@@ -1,7 +1,7 @@
 import pygame
 from .bullet import Bullet
 from .boss import Boss
-
+import random
 
 class RenderHandler:
 
@@ -56,7 +56,7 @@ class RenderHandler:
 
             if self.boss_bullet_time >= 90:
                 self.boss.update()
-                self.boss_bullets.append(Bullet([self.boss.pos[0], self.boss.pos[1]], 5))
+                self.boss_bullets.append(Bullet([self.boss.pos[0], self.boss.pos[1]], 5, random.randint(0, 360)))
                 self.boss_bullet_time = 0
 
             if self.bullet_start >= 10:
